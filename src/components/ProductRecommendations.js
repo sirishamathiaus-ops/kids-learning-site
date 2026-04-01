@@ -26,10 +26,7 @@ export function ProductRecommendations() {
           <h2 id="product-recs-title" className="sectionTitle">
             Product recommendations
           </h2>
-          <p className="muted sectionLead">
-            Popular picks parents often buy alongside these activities. Product links can be added
-            when you are ready.
-          </p>
+      
         </div>
       </div>
 

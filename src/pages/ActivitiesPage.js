@@ -104,8 +104,7 @@ export function ActivitiesPage() {
       <section className="sectionHeader pageIntro">
         <h1 className="pageTitle">Activities</h1>
         <p className="muted pageLead">
-          Each card includes a picture and a short idea you can try at home. Product links can be
-          added later.
+          Each card includes a picture and a short idea you can try at home.
         </p>
       </section>
 

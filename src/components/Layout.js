@@ -73,7 +73,7 @@ export function Layout() {
 
       <main id="main-content" className="container main" tabIndex={-1}>
         <Outlet />
-        <ProductRecommendations />
+      
       </main>
 
       <footer className="siteFooter">

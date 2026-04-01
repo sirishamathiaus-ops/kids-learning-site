@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ProductRecommendations } from '../components/ProductRecommendations';
 
 const FEATURED = [
   {
@@ -101,6 +102,7 @@ export function HomePage() {
           ))}
         </div>
       </section>
+        <ProductRecommendations />
     </div>
   );
 }

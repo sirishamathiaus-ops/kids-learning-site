@@ -28,18 +28,16 @@ const POSTS = [
 const AMAZON_IDEA_LINKS = [
   {
     title: 'Educational toys',
-      href: '#',
     cover: 'rose',
   },
   {
     title: 'Learning workbooks',
     cover: 'indigo',
-      href: '#',
+    
   },
   {
     title: 'Kids puzzles',
     cover: 'teal',
-      href: '#',
   },
 ];
 
@@ -49,10 +47,7 @@ export function BlogPage() {
       <header className="pageIntro blogPageHeader">
         <p className="blogPageHeader__label">Resources &amp; blog</p>
         <h1 className="pageTitle">Ideas for curious families</h1>
-        <p className="muted pageLead">
-          Guides and articles for parents—add posts here and include Amazon product links inside
-          each article.
-        </p>
+      
       </header>
 
       <section className="platformSection platformSection--flush" aria-labelledby="posts-heading">
@@ -88,11 +83,9 @@ export function BlogPage() {
       <section className="platformSection" aria-labelledby="amazon-heading">
         <div className="platformSection__head">
           <h2 id="amazon-heading" className="platformSection__title">
-            Example Amazon picks
+            Example picks
           </h2>
-          <p className="muted platformSection__subtitle">
-            Replace these with your Amazon Associates links once you have your affiliate ID.
-          </p>
+         
         </div>
         <div className="blogGrid">
           {AMAZON_IDEA_LINKS.map((item) => (
@@ -112,7 +105,7 @@ export function BlogPage() {
                   Search results page (swap to your exact product links).
                 </p>
                 <span className="blogCard__link">
-                  View on Amazon
+                  View on Link
                   <span aria-hidden> →</span>
                 </span>
               </div>
