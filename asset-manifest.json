@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.3f1d12a7.css",
-    "main.js": "/static/js/main.96249d64.js",
-    "static/js/453.e9e7ec89.chunk.js": "/static/js/453.e9e7ec89.chunk.js",
-    "index.html": "/index.html",
-    "main.3f1d12a7.css.map": "/static/css/main.3f1d12a7.css.map",
-    "main.96249d64.js.map": "/static/js/main.96249d64.js.map",
-    "453.e9e7ec89.chunk.js.map": "/static/js/453.e9e7ec89.chunk.js.map"
+    "main.css": "/kids-learning-site/static/css/main.3f1d12a7.css",
+    "main.js": "/kids-learning-site/static/js/main.bb3c7eff.js",
+    "static/js/453.e9e7ec89.chunk.js": "/kids-learning-site/static/js/453.e9e7ec89.chunk.js",
+    "index.html": "/kids-learning-site/index.html",
+    "main.3f1d12a7.css.map": "/kids-learning-site/static/css/main.3f1d12a7.css.map",
+    "main.bb3c7eff.js.map": "/kids-learning-site/static/js/main.bb3c7eff.js.map",
+    "453.e9e7ec89.chunk.js.map": "/kids-learning-site/static/js/453.e9e7ec89.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3f1d12a7.css",
-    "static/js/main.96249d64.js"
+    "static/js/main.bb3c7eff.js"
   ]
 }
