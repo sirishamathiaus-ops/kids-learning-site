@@ -110,7 +110,7 @@ export function Layout() {
                 <NavLink to="/contact">Send a message</NavLink>
               </li>
               <li>
-                <a href="mailto:hello@kidslearning.example">sirishamathiaus@gmail.com</a>
+                <a>sirishamathiaus@gmail.com</a>
               </li>
             </ul>
           </div>

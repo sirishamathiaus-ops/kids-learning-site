@@ -48,7 +48,6 @@ export function HomePage() {
             </div>
             <ul className="educHero__pills" aria-label="Highlights">
               <li>Free ideas</li>
-              <li>Ages 3–10</li>
               <li>Parent-friendly</li>
             </ul>
           </div>

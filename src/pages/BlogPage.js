@@ -28,18 +28,18 @@ const POSTS = [
 const AMAZON_IDEA_LINKS = [
   {
     title: 'Educational toys',
-    href: 'https://www.amazon.com.au/s?k=educational+toys+for+kids',
+      href: '#',
     cover: 'rose',
   },
   {
     title: 'Learning workbooks',
-    href: 'https://www.amazon.com.au/s?k=kids+learning+workbooks',
     cover: 'indigo',
+      href: '#',
   },
   {
     title: 'Kids puzzles',
-    href: 'https://www.amazon.com.au/s?k=kids+puzzles',
     cover: 'teal',
+      href: '#',
   },
 ];
 
