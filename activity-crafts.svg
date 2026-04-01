@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g fill="none" stroke="#065f46" stroke-width="18" stroke-linecap="round" opacity="0.9">
+    <path d="M260 540 L420 380 L580 540 L740 380 L900 540"/>
+    <path d="M260 300 L900 300"/>
+  </g>
+  <g fill="#065f46" opacity="0.95">
+    <text x="70" y="140" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="64" font-weight="800">
+      Crafts
+    </text>
+    <text x="70" y="210" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="30" font-weight="600" opacity="0.75">
+      Cut, glue, build
+    </text>
+  </g>
+</svg>
