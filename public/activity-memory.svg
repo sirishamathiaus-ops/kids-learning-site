@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g opacity="0.92">
+    <rect x="330" y="260" width="240" height="320" rx="24" fill="#0f172a"/>
+    <rect x="630" y="260" width="240" height="320" rx="24" fill="#0f172a" opacity="0.86"/>
+    <path d="M410 420 C 455 345, 540 345, 540 420 C 540 475, 475 520, 475 560 C 475 520, 410 475, 410 420 Z" fill="#f43f5e"/>
+    <path d="M710 420 C 755 345, 840 345, 840 420 C 840 475, 775 520, 775 560 C 775 520, 710 475, 710 420 Z" fill="#f43f5e" opacity="0.85"/>
+  </g>
+  <g fill="#0c4a6e" opacity="0.95">
+    <text x="70" y="140" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="64" font-weight="800">
+      Memory games
+    </text>
+    <text x="70" y="210" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="30" font-weight="600" opacity="0.75">
+      Flip, find, and remember
+    </text>
+  </g>
+</svg>
