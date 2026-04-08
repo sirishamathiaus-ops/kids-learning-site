@@ -1,20 +1,22 @@
-import './App.css';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { HomePage } from './pages/HomePage';
-import { ActivitiesPage } from './pages/ActivitiesPage';
-import { BlogPage } from './pages/BlogPage';
-import { ContactPage } from './pages/ContactPage';
+import { MemoryGamePage } from './pages/MemoryGamePage';
+import { MathQuizPage } from './pages/MathQuizPage';
+import { StoriesPage } from './pages/StoriesPage';
+import { NurseryRhymesPage } from './pages/NurseryRhymesPage';
+import { ShopPage } from './pages/ShopPage';
 
 function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/activities" element={<ActivitiesPage />} />
-        <Route path="/resources" element={<BlogPage />} />
-        <Route path="/blog" element={<Navigate to="/resources" replace />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/memory" element={<MemoryGamePage />} />
+        <Route path="/math" element={<MathQuizPage />} />
+        <Route path="/stories" element={<StoriesPage />} />
+        <Route path="/rhymes" element={<NurseryRhymesPage />} />
+        <Route path="/shop" element={<ShopPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

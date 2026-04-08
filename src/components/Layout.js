@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Logo } from './Logo';
-import { ProductRecommendations } from './ProductRecommendations';
 
 const NAV = [
-  { to: '/', label: 'Home' },
-  { to: '/activities', label: 'Activities' },
-  { to: '/resources', label: 'Resources' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/', label: 'Home', emoji: '🏠' },
+  { to: '/memory', label: 'Memory', emoji: '🧠' },
+  { to: '/math', label: 'Maths', emoji: '🔢' },
+  { to: '/stories', label: 'Stories', emoji: '📚' },
+  { to: '/rhymes', label: 'Rhymes', emoji: '🎵' },
+  { to: '/shop', label: 'Shop', emoji: '🛍️' },
 ];
 
 export function Layout() {
@@ -22,48 +23,73 @@ export function Layout() {
   }, []);
 
   useEffect(() => {
-    document.body.classList.toggle('navOpen', menuOpen);
-    return () => document.body.classList.remove('navOpen');
+    document.body.classList.toggle('overflow-hidden', menuOpen);
+    return () => document.body.classList.remove('overflow-hidden');
   }, [menuOpen]);
 
   return (
-    <div className="appShell">
-      <a href="#main-content" className="skipLink">
+    <div className="flex min-h-screen flex-col">
+      <a
+        href="#main-content"
+        className="sr-only left-4 top-4 z-[100] rounded-kid bg-slate-900 px-4 py-2 font-extrabold text-white focus:not-sr-only focus:absolute focus:outline focus:outline-4 focus:outline-amber-300"
+      >
         Skip to content
       </a>
 
-      <header className="siteHeader">
-        <div className="container headerInner">
-          <NavLink to="/" className="brandLockup" onClick={() => setMenuOpen(false)}>
-            <Logo className="brandLogo" />
-            <span className="brandText">
-              <span className="brandName">Kids Learning</span>
-              <span className="brandTagline">Activities at home</span>
+      <header className="sticky top-0 z-50 border-b-2 border-white/60 bg-white/90 shadow-soft backdrop-blur-md">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+          <NavLink
+            to="/"
+            className="group flex items-center gap-3 rounded-kid py-1 pr-3 pl-1 transition hover:bg-sky-100/80 focus-visible:outline focus-visible:outline-4 focus-visible:outline-amber-300"
+            onClick={() => setMenuOpen(false)}
+            end
+          >
+            <span className="rounded-2xl bg-gradient-to-br from-kid-sun via-kid-sky to-kid-mint p-1 shadow-inner ring-2 ring-white">
+              <Logo className="h-10 w-10" />
+            </span>
+            <span className="flex flex-col leading-tight">
+              <span className="font-display text-lg font-bold text-slate-900 sm:text-xl">Kids Fun Lab</span>
+              <span className="text-xs font-extrabold text-slate-600">Playful learning for little explorers</span>
             </span>
           </NavLink>
 
           <button
             type="button"
-            className="navToggle"
+            className="tap-target inline-flex flex-col justify-center gap-1.5 rounded-kid border-2 border-slate-200 bg-white px-3 py-2 shadow-sm md:hidden"
             aria-expanded={menuOpen}
             aria-controls="site-nav"
             onClick={() => setMenuOpen((o) => !o)}
           >
-            <span className="navToggleBar" />
-            <span className="navToggleBar" />
-            <span className="navToggleBar" />
-            <span className="srOnly">{menuOpen ? 'Close menu' : 'Open menu'}</span>
+            <span className="h-0.5 w-6 rounded-full bg-slate-900 transition group-[]" />
+            <span className="h-0.5 w-6 rounded-full bg-slate-900" />
+            <span className="h-0.5 w-6 rounded-full bg-slate-900" />
+            <span className="sr-only">{menuOpen ? 'Close menu' : 'Open menu'}</span>
           </button>
 
-          <nav id="site-nav" className={`siteNav ${menuOpen ? 'siteNav--open' : ''}`}>
-            {NAV.map(({ to, label }) => (
+          <nav
+            id="site-nav"
+            className={[
+              'absolute left-0 right-0 top-full z-40 flex-col gap-2 rounded-b-kid-lg border-x-2 border-b-2 border-white bg-white/98 p-4 shadow-lift md:static md:flex md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none',
+              menuOpen ? 'flex' : 'hidden',
+              'md:flex',
+            ].join(' ')}
+          >
+            {NAV.map(({ to, label, emoji }) => (
               <NavLink
                 key={to}
                 to={to}
-                className={({ isActive }) => `siteNavLink${isActive ? ' siteNavLink--active' : ''}`}
-                onClick={() => setMenuOpen(false)}
                 end={to === '/'}
+                onClick={() => setMenuOpen(false)}
+                className={({ isActive }) =>
+                  [
+                    'flex items-center gap-2 rounded-full px-4 py-3 text-sm font-extrabold transition md:py-2',
+                    isActive
+                      ? 'bg-slate-900 text-white shadow-md'
+                      : 'text-slate-800 hover:bg-sky-100/90',
+                  ].join(' ')
+                }
               >
+                <span aria-hidden>{emoji}</span>
                 {label}
               </NavLink>
             ))}
@@ -71,48 +97,29 @@ export function Layout() {
         </div>
       </header>
 
-      <main id="main-content" className="container main" tabIndex={-1}>
+      <main id="main-content" className="mx-auto w-full max-w-6xl flex-1 px-4 sm:px-6" tabIndex={-1}>
         <Outlet />
-      
       </main>
 
-      <footer className="siteFooter">
-        <div className="container footerGrid">
-          <div className="footerBrandCol">
-            <div className="footerBrandRow">
-              <Logo className="footerLogo" />
-              <div>
-                <div className="footerBrandName">Kids Learning</div>
-                <p className="footerBrandBlurb">
-                  Clean ideas and gentle structure for parents—playful learning for kids.
-                </p>
-              </div>
+      <footer className="mt-auto border-t-2 border-white/70 bg-white/90 py-10 backdrop-blur-sm">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 sm:flex-row sm:items-start sm:justify-between sm:px-6">
+          <div className="flex max-w-md items-start gap-3">
+            <Logo className="h-12 w-12 shrink-0" />
+            <div>
+              <p className="font-display text-lg font-bold text-slate-900">Kids Fun Lab</p>
+              <p className="mt-1 text-sm font-semibold text-slate-600">
+                Made with giggles, glitter, and gentle learning goals.
+              </p>
             </div>
           </div>
-
-          <div className="footerCol">
-            <div className="footerHeading">Explore</div>
-            <ul className="footerLinks">
-              {NAV.map(({ to, label }) => (
-                <li key={to}>
-                  <NavLink to={to} end={to === '/'}>
-                    {label}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footerCol">
-            <div className="footerHeading">Contact</div>
-            <ul className="footerLinks">
-              <li>
-                <NavLink to="/contact">Send a message</NavLink>
-              </li>
-              <li>
-                <a>sirishamathiaus@gmail.com</a>
-              </li>
-            </ul>
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-wide text-slate-500">Say hello</p>
+            <a
+              className="mt-2 block text-sm font-bold text-indigo-700 hover:underline"
+              href="mailto:sirishamathiaus@gmail.com"
+            >
+              sirishamathiaus@gmail.com
+            </a>
           </div>
         </div>
       </footer>

@@ -1,0 +1,55 @@
+export const STORIES = [
+  {
+    id: 'star-helper',
+    title: 'The Little Star Helper',
+    emoji: '⭐',
+    accent: 'from-amber-200 via-yellow-100 to-orange-100',
+    excerpt: 'A tiny star learns that helping friends makes the whole sky shine brighter.',
+    paragraphs: [
+      'Once upon a time, high above the clouds, there lived a small star named Twinkle. Twinkle was newer than the other stars and worried about not shining brightly enough.',
+      'One calm night, Moon noticed Twinkle looking sad. “Every star has their own glow,” said Moon gently. “Try lighting up the path for travelers below.”',
+      'Twinkle focused on a dark hillside where a family was walking home. As Twinkle shone a little brighter, the path became easier to see. The family waved up at the sky, and Twinkle felt warm inside.',
+      'From that night on, Twinkle helped little fireflies find their way, guided sleepy birds to their nests, and smiled at children peeking through bedroom windows. Twinkle learned that kindness makes any light feel bigger—and the sky had never looked happier.',
+    ],
+  },
+  {
+    id: 'puddle-king',
+    title: 'Benny and the Puddle King',
+    emoji: '🐸',
+    accent: 'from-emerald-200 via-teal-100 to-cyan-100',
+    excerpt: 'Rain boots, a friendly frog, and a surprising lesson about sharing.',
+    paragraphs: [
+      'Benny loved rainy days because of the shiny puddles outside. One morning, after a big storm, Benny raced to the biggest puddle in the park—with fancy new rain boots that squeaked when walking.',
+      'Sitting on a leaf in the middle of the puddle was Freddie, a cheerful frog who called himself the Puddle King. “Welcome to my royal pool!” croaked Freddie, bowing with a tiny splash.',
+      'Benny almost laughed, but Freddie looked serious. “To enter, you must promise one thing: share the splashes with anyone who asks.” Benny promised, though he secretly wanted the whole puddle to himself.',
+      'Soon, other kids arrived with boots and boats made from walnut shells. Benny remembered the promise. He stepped back, took turns, and showed newcomers how to hop without slipping.',
+      'The puddle became the happiest spot in the park—full of giggles, ripples, and teamwork. Freddie winked at Benny. “See? A real King shares the fun.” Benny agreed: sharing made the rainy day shine.',
+    ],
+  },
+  {
+    id: 'cookie-count',
+    title: 'Grandma’s Cookie Count',
+    emoji: '🍪',
+    accent: 'from-rose-200 via-pink-100 to-fuchsia-100',
+    excerpt: 'Mia practices counting while baking—and learns a sweet surprise about patience.',
+    paragraphs: [
+      'Mia visited Grandma on Saturday, and the kitchen smelled like vanilla and cinnamon. “Today we’re making smiley cookies,” Grandma announced, sliding a bowl of dough toward Mia.',
+      'Grandma asked Mia to count twelve spoonfuls of chocolate chips. Mia counted carefully: one, two, three… and paused when she reached seven. “What if we sneak one early?” Mia whispered.',
+      'Grandma chuckled. “Bakers need patience. Let’s finish counting together—and the first warm cookie goes to whoever waits nicely.” Mia squeezed Grandma’s hand and counted all the way to twelve.',
+      'When the timer dinged, the cookies were golden and soft. Mia’s smile matched the cookie faces. Waiting hadn’t been easy, but sharing warm cookies with Grandma made them taste even sweeter.',
+    ],
+  },
+  {
+    id: 'rocket-dream',
+    title: 'The Rocket in the Backyard',
+    emoji: '🚀',
+    accent: 'from-violet-200 via-indigo-100 to-blue-100',
+    excerpt: 'Sofi builds a cardboard rocket and discovers imagination is the best fuel.',
+    paragraphs: [
+      'Sofi dragged three cardboard boxes into the yard and announced a mission to Mars—after snack time. With markers, foil, and a roll of tape, Sofi built a rocket that wobbled but looked wonderfully real.',
+      'Neighbor Jax peeked over the fence. “Does it fly?” Jax asked. Sofi thought hard. “It flies in stories,” Sofi said. “Want to be Mission Control?”',
+      'They counted down from ten, made whoosh sounds, and described orange deserts and glittering stars. A ladybug landed on the rocket’s nose, and they decided it was an alien diplomat saying hello.',
+      'When the sun dipped low, Mom called them inside. The rocket stayed in the yard, covered with a tarp to keep it safe. Sofi whispered goodnight to the stars, knowing tomorrow’s imagination would launch again.',
+    ],
+  },
+];

@@ -8,7 +8,5 @@ test('renders home page hero title', () => {
       <App />
     </MemoryRouter>
   );
-  expect(
-    screen.getByRole('heading', { name: /Fun Kids Learning Activities at Home/i })
-  ).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /Fun Kids Learning — play, read, count, and explore!/i })).toBeInTheDocument();
 });
