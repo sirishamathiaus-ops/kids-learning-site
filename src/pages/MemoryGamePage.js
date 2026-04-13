@@ -20,7 +20,7 @@ export function MemoryGamePage() {
                 Memory match
               </KidPageHeading>
             </div>
-            <p className="font-comic mt-4 max-w-2xl text-lg font-semibold leading-relaxed text-slate-800 sm:text-xl">
+            <p className="font-comic mt-4 max-w-2xl text-xl font-extrabold leading-relaxed text-red-800 sm:text-xl">
               Find two matching emojis. Try to use fewer moves each time you play!
             </p>
           </div>
