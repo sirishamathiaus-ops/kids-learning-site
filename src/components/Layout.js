@@ -72,7 +72,7 @@ export function Layout() {
           <nav
             id="site-nav"
             className={[
-              'absolute left-0 right-0 top-full z-40 flex-col gap-2 rounded-b-kid-lg border-x-2 border-b-2 border-white bg-white/98 p-4 shadow-lift md:static md:flex md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none',
+              'absolute left-0 right-0 top-full z-40 flex-col gap-2 rounded-b-kid-lg border-x-2 border-b-2 border-white bg-kid-sky p-4 shadow-lift md:static md:flex md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none',
               menuOpen ? 'flex' : 'hidden',
               'md:flex',
             ].join(' ')}
@@ -104,7 +104,7 @@ export function Layout() {
         <Outlet />
       </main>
 
-      <footer className="mt-auto border-t-2 border-white/70 bg-white/90 py-10 backdrop-blur-sm">
+      <footer className="mt-auto border-t-2 border-white/70 bg-gradient-to-r from-pink-100 via-orange-100 to-yellow-100 py-10 backdrop-blur-sm">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 sm:flex-row sm:items-start sm:justify-between sm:px-6">
           <div className="flex max-w-md items-start gap-3">
             <Logo className="h-12 w-12 shrink-0" />
@@ -116,14 +116,15 @@ export function Layout() {
             </div>
           </div>
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-wide text-slate-500">Say hello</p>
-            <a
-              className="mt-2 block text-sm font-bold text-indigo-700 hover:underline"
-              href="mailto:sirishamathiaus@gmail.com"
-            >
-              sirishamathiaus@gmail.com
-            </a>
+            <p className="font-display text-lg font-bold text-slate-900">
+               🌈 Made with ❤️ for Kids
+            </p>
           </div>
+        </div>
+        <div className="mx-auto mt-6 w-full max-w-6xl px-4 text-center sm:px-6">
+          <p className="text-xs font-extrabold text-slate-500">
+            &copy; Kids Fun Lab. All rights reserved. 🎉
+          </p>
         </div>
       </footer>
     </div>
