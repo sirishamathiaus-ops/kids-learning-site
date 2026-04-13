@@ -16,8 +16,8 @@ export function NavCard({ to, title, description, emoji, accent = 'yellow', dela
     <Link
       to={to}
       className={[
-        'group relative overflow-hidden rounded-kid-lg border-2 border-white/80 bg-gradient-to-br p-6 shadow-soft transition-all duration-300',
-        'hover:-translate-y-1 hover:shadow-lift focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-amber-300',
+        'group relative overflow-hidden rounded-kid-lg border-2 border-white/80 bg-gradient-to-br p-6 shadow-soft transition-all duration-300 sm:p-7',
+        'motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lift focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-amber-300',
         gradient,
         delayClass,
       ].join(' ')}
@@ -33,16 +33,14 @@ export function NavCard({ to, title, description, emoji, accent = 'yellow', dela
           {emoji}
         </span>
         <div>
-          <h2 className="font-display text-xl font-bold text-slate-900 sm:text-2xl">{title}</h2>
-          <p className="mt-1 text-sm font-semibold leading-relaxed text-slate-800/90 sm:text-base">
+          <h2 className="font-comic text-2xl font-extrabold text-slate-900 sm:text-3xl">{title}</h2>
+          <p className="mt-2 text-base font-semibold leading-relaxed text-slate-800/95 sm:text-lg">
             {description}
           </p>
         </div>
-        <span className="mt-2 inline-flex items-center gap-1 text-sm font-extrabold text-slate-900 underline decoration-2 decoration-slate-900/30 underline-offset-4 group-hover:decoration-slate-900">
+        <span className="mt-3 inline-flex items-center gap-1 rounded-full bg-white/80 px-3 py-1.5 text-sm font-extrabold text-pink-600 shadow-sm motion-safe:group-hover:translate-x-0.5 sm:text-base">
           Let’s go
-          <span aria-hidden className="transition-transform group-hover:translate-x-1">
-            →
-          </span>
+          <span aria-hidden>→</span>
         </span>
       </div>
     </Link>

@@ -5,11 +5,18 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 106%;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      font-size: 108%;
+    }
   }
 
   body {
     margin: 0;
-    font-family: theme(fontFamily.sans);
+    font-family: theme(fontFamily.comic);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #0f172a;

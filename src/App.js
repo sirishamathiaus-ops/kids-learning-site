@@ -6,12 +6,14 @@ import { MathQuizPage } from './pages/MathQuizPage';
 import { StoriesPage } from './pages/StoriesPage';
 import { NurseryRhymesPage } from './pages/NurseryRhymesPage';
 import { ShopPage } from './pages/ShopPage';
+import { LearningPage } from './pages/LearningPage';
 
 function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/learning" element={<LearningPage />} />
         <Route path="/memory" element={<MemoryGamePage />} />
         <Route path="/math" element={<MathQuizPage />} />
         <Route path="/stories" element={<StoriesPage />} />

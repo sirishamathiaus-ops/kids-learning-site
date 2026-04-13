@@ -6,6 +6,16 @@ module.exports = {
       fontFamily: {
         sans: ['Nunito', 'system-ui', 'sans-serif'],
         display: ['Fredoka', 'Nunito', 'system-ui', 'sans-serif'],
+        kid: ['"Bubblegum Sans"', 'Fredoka', 'Nunito', 'system-ui', 'sans-serif'],
+        comic: [
+          '"Comic Neue"',
+          '"Comic Sans MS"',
+          '"Chalkboard SE"',
+          'Marker Felt',
+          'cursive',
+          'system-ui',
+          'sans-serif',
+        ],
       },
       colors: {
         kid: {
@@ -43,12 +53,23 @@ module.exports = {
           '0%': { backgroundPosition: '200% 0' },
           '100%': { backgroundPosition: '-200% 0' },
         },
+        'kid-heading-enter': {
+          '0%': { opacity: '0', transform: 'translateY(14px) scale(0.94)' },
+          '65%': { opacity: '1', transform: 'translateY(-6px) scale(1.03)' },
+          '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+        },
+        'kid-fade-in': {
+          '0%': { opacity: '0', transform: 'translateY(8px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         float: 'float 4s ease-in-out infinite',
         wiggle: 'wiggle 0.6s ease-in-out infinite',
         pop: 'pop 0.35s ease-out forwards',
         shimmer: 'shimmer 3s linear infinite',
+        'kid-heading-enter': 'kid-heading-enter 0.7s ease-out both',
+        'kid-fade-in': 'kid-fade-in 0.55s ease-out both',
       },
     },
   },

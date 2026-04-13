@@ -1,8 +1,13 @@
+/**
+ * Nursery rhymes — each entry uses a file from /public/audio/rhymes/ (see musicFile).
+ * The <audio> tag also includes a remote fallback URL if the local file cannot load.
+ */
 export const NURSERY_RHYMES = [
   {
     id: 'twinkle',
     title: 'Twinkle, Twinkle, Little Star',
     emoji: '✨',
+    musicFile: 'music-soft-1.mp3',
     verses: [
       'Twinkle, twinkle, little star,',
       'How I wonder what you are!',
@@ -13,9 +18,24 @@ export const NURSERY_RHYMES = [
     ],
   },
   {
+    id: 'abc',
+    title: 'The ABC Song',
+    emoji: '🔤',
+    musicFile: 'music-soft-2.mp3',
+    verses: [
+      'A, B, C, D, E, F, G —',
+      'H, I, J, K, L, M, N, O, P —',
+      'Q, R, S — T, U, V —',
+      'W, X — Y and Z.',
+      'Now I know my ABCs.',
+      'Next time won’t you sing with me?',
+    ],
+  },
+  {
     id: 'baa-baa',
     title: 'Baa, Baa, Black Sheep',
     emoji: '🐑',
+    musicFile: 'music-soft-3.mp3',
     verses: [
       'Baa, baa, black sheep,',
       'Have you any wool?',
@@ -28,9 +48,37 @@ export const NURSERY_RHYMES = [
     ],
   },
   {
+    id: 'old-macdonald',
+    title: 'Old MacDonald Had a Farm',
+    emoji: '🐄',
+    musicFile: 'music-soft-4.mp3',
+    verses: [
+      'Old MacDonald had a farm, E-I-E-I-O!',
+      'And on that farm he had a cow, E-I-E-I-O!',
+      'With a moo-moo here and a moo-moo there,',
+      'Here a moo, there a moo, everywhere a moo-moo!',
+      'Old MacDonald had a farm, E-I-E-I-O!',
+    ],
+  },
+  {
+    id: 'five-ducks',
+    title: 'Five Little Ducks',
+    emoji: '🦆',
+    musicFile: 'music-soft-1.mp3',
+    verses: [
+      'Five little ducks went out one day,',
+      'Over the hills and far away.',
+      'Mother duck said, “Quack, quack, quack,”',
+      'But only four little ducks came back.',
+      'Four… three… two… one…',
+      'Then one little duck came swimming back — splash!',
+    ],
+  },
+  {
     id: 'humpty',
     title: 'Humpty Dumpty',
     emoji: '🥚',
+    musicFile: 'music-soft-2.mp3',
     verses: [
       'Humpty Dumpty sat on a wall,',
       'Humpty Dumpty had a great fall.',
@@ -44,6 +92,7 @@ export const NURSERY_RHYMES = [
     id: 'row-boat',
     title: 'Row, Row, Row Your Boat',
     emoji: '🛶',
+    musicFile: 'music-soft-3.mp3',
     verses: [
       'Row, row, row your boat,',
       'Gently down the stream.',
@@ -52,9 +101,47 @@ export const NURSERY_RHYMES = [
     ],
   },
   {
+    id: 'happy-and-you-know',
+    title: 'If You’re Happy and You Know It',
+    emoji: '👏',
+    musicFile: 'music-soft-4.mp3',
+    verses: [
+      'If you’re happy and you know it, clap your hands!',
+      'If you’re happy and you know it, clap your hands!',
+      'If you’re happy and you know it,',
+      'Then your face will surely show it —',
+      'If you’re happy and you know it, clap your hands!',
+    ],
+  },
+  {
+    id: 'wheels-bus',
+    title: 'The Wheels on the Bus',
+    emoji: '🚌',
+    musicFile: 'music-soft-1.mp3',
+    verses: [
+      'The wheels on the bus go round and round,',
+      'Round and round, round and round.',
+      'The wheels on the bus go round and round,',
+      'All through the town!',
+    ],
+  },
+  {
+    id: 'mary-lamb',
+    title: 'Mary Had a Little Lamb',
+    emoji: '🐑',
+    musicFile: 'music-soft-2.mp3',
+    verses: [
+      'Mary had a little lamb,',
+      'Little lamb, little lamb.',
+      'Mary had a little lamb —',
+      'Its fleece was white as snow!',
+    ],
+  },
+  {
     id: 'little-spider',
     title: 'Itsy Bitsy Spider',
     emoji: '🕷️',
+    musicFile: 'music-soft-3.mp3',
     verses: [
       'The itsy bitsy spider',
       'Went up the water spout.',

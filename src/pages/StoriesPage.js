@@ -1,62 +1,66 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { STORIES } from '../data/stories';
+import { BackHomeLink } from '../components/kids/BackHomeLink';
+import { KidPageHeading } from '../components/kids/KidPageHeading';
+import { PageBackdrop } from '../components/layout/PageBackdrop';
 import { StoryReaderModal } from '../components/stories/StoryReaderModal';
+import { PAGE_BACKGROUNDS } from '../data/pageBackgrounds';
+import { STORIES } from '../data/stories';
 
 export function StoriesPage() {
   const [active, setActive] = useState(null);
 
   return (
-    <div className="pb-12 pt-4 sm:pb-16 sm:pt-6">
-      <div className="mb-8">
-        <Link
-          to="/"
-          className="text-sm font-extrabold text-indigo-700 underline decoration-2 underline-offset-4 hover:text-indigo-900"
-        >
-          ← Back home
-        </Link>
-        <h1 className="font-display mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
-          <span aria-hidden>📚</span> Story time
-        </h1>
-        <p className="mt-2 max-w-2xl text-sm font-semibold text-slate-700 sm:text-base">
-          Choose a story card — we will open a cozy full-screen read for you.
+    <PageBackdrop
+      imageUrl={PAGE_BACKGROUNDS.stories}
+      overlayClassName="bg-gradient-to-b from-violet-50/94 via-white/93 to-amber-50/90 backdrop-blur-[2px]"
+    >
+      <div className="pb-16 pt-6 sm:pb-20 sm:pt-8">
+        <BackHomeLink />
+        <div className="mt-5">
+          <KidPageHeading>
+            <span aria-hidden>📚 </span>
+            Story time
+          </KidPageHeading>
+        </div>
+        <p className="font-comic mt-4 max-w-2xl text-lg font-semibold leading-relaxed text-slate-800 sm:text-xl">
+          Tap a story card. The words are short and friendly — perfect for early readers.
         </p>
-      </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        {STORIES.map((story) => (
-          <button
-            key={story.id}
-            type="button"
-            onClick={() => setActive(story)}
-            className="group relative overflow-hidden rounded-kid-lg border-4 border-white bg-white p-5 text-left shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-amber-400 sm:p-6"
-          >
-            <div
-              className={`absolute inset-0 bg-gradient-to-br opacity-40 transition-opacity duration-300 group-hover:opacity-55 ${story.accent}`}
-              aria-hidden
-            />
-            <div className="relative z-10 flex gap-4">
-              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white text-4xl shadow-md">
-                <span aria-hidden>{story.emoji}</span>
-              </span>
-              <div className="min-w-0">
-                <h2 className="font-display text-xl font-bold text-slate-900 sm:text-2xl">{story.title}</h2>
-                <p className="mt-2 text-sm font-semibold leading-relaxed text-slate-800 sm:text-base">
-                  {story.excerpt}
-                </p>
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-indigo-700">
-                  Read the story
-                  <span aria-hidden className="transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {STORIES.map((story) => (
+            <button
+              key={story.id}
+              type="button"
+              onClick={() => setActive(story)}
+              className="group relative overflow-hidden rounded-kid-lg border-[3px] border-white bg-white/95 p-6 text-left shadow-[0_12px_40px_rgba(15,23,42,0.1)] transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_20px_50px_rgba(109,40,217,0.15)] focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-violet-400 sm:p-7"
+            >
+              <div
+                className={`absolute inset-0 bg-gradient-to-br opacity-45 transition-opacity duration-300 group-hover:opacity-60 ${story.accent}`}
+                aria-hidden
+              />
+              <div className="relative z-10 flex gap-4 sm:gap-5">
+                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white text-4xl shadow-md sm:h-20 sm:w-20 sm:text-5xl">
+                  <span aria-hidden>{story.emoji}</span>
                 </span>
+                <div className="min-w-0">
+                  <h2 className="font-comic text-xl font-extrabold text-slate-900 sm:text-2xl">{story.title}</h2>
+                  <p className="mt-2 text-base font-semibold leading-relaxed text-slate-800 sm:text-lg">
+                    {story.excerpt}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 text-sm font-extrabold text-violet-700 shadow-sm">
+                    Read the story
+                    <span aria-hidden className="transition-transform group-hover:translate-x-1">
+                      →
+                    </span>
+                  </span>
+                </div>
               </div>
-            </div>
-          </button>
-        ))}
-      </div>
+            </button>
+          ))}
+        </div>
 
-      <StoryReaderModal story={active} onClose={() => setActive(null)} />
-    </div>
+        <StoryReaderModal story={active} onClose={() => setActive(null)} />
+      </div>
+    </PageBackdrop>
   );
 }

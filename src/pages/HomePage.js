@@ -1,6 +1,16 @@
+import { KidPageHeading, KidSectionHeading } from '../components/kids/KidPageHeading';
 import { NavCard } from '../components/kids/NavCard';
+import { PageBackdrop } from '../components/layout/PageBackdrop';
+import { PAGE_BACKGROUNDS } from '../data/pageBackgrounds';
 
 const NAV_CARDS = [
+  {
+    to: '/learning',
+    title: 'Learning Zone',
+    description: 'Memory, maths, and happy picks — your brain-boost corner!',
+    emoji: '📒',
+    accent: 'sky',
+  },
   {
     to: '/memory',
     title: 'Memory Match',
@@ -25,7 +35,7 @@ const NAV_CARDS = [
   {
     to: '/rhymes',
     title: 'Nursery Rhymes',
-    description: 'Sing along! Cards open to show every line.',
+    description: 'Sing along! Cards open to show every line — plus soft music.',
     emoji: '🎵',
     accent: 'mint',
   },
@@ -40,55 +50,57 @@ const NAV_CARDS = [
 
 export function HomePage() {
   return (
-    <div className="pb-12 pt-4 sm:pb-16 sm:pt-6">
-      <section
-        className="relative overflow-hidden rounded-kid-lg border-4 border-white bg-gradient-to-br from-fuchsia-200 via-kid-sky/80 to-kid-mint p-6 shadow-lift sm:p-10"
-        aria-labelledby="hero-heading"
-      >
-        <span
-          className="pointer-events-none absolute -right-6 top-6 text-8xl opacity-30 animate-float sm:text-9xl"
-          aria-hidden
+    <PageBackdrop
+      imageUrl={PAGE_BACKGROUNDS.home}
+      overlayClassName="bg-gradient-to-b from-amber-50/94 via-white/92 to-rose-50/90 backdrop-blur-[2px]"
+    >
+      <div className="pb-16 pt-6 sm:pb-20 sm:pt-8">
+        <section
+          className="relative overflow-hidden rounded-kid-lg border-[3px] border-white bg-white/90 p-6 shadow-[0_16px_48px_rgba(15,23,42,0.12)] sm:p-10"
+          aria-labelledby="hero-heading"
         >
-          🌈
-        </span>
-        <span
-          className="pointer-events-none absolute bottom-4 left-4 text-5xl opacity-25 sm:text-6xl"
-          aria-hidden
-        >
-          ✨
-        </span>
-        <div className="relative z-10 max-w-3xl">
-          <p className="inline-flex items-center rounded-full bg-white/85 px-4 py-1.5 text-sm font-extrabold uppercase tracking-wide text-slate-700 shadow-sm">
-            Hello, superstar!
-          </p>
-          <h1
-            id="hero-heading"
-            className="font-display mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl lg:text-5xl"
+          <span
+            className="pointer-events-none absolute -right-6 top-6 text-8xl opacity-35 animate-float sm:text-9xl"
+            aria-hidden
           >
-            Fun Kids Learning — play, read, count, and explore!
-          </h1>
-          <p className="mt-4 max-w-2xl text-base font-semibold leading-relaxed text-slate-800 sm:text-lg">
-            Tap a colourful card below to jump into games, cosy stories, sing-along rhymes, or our tiny toy
-            shop. Everything is big, bright, and ready for tablets and phones.
-          </p>
-        </div>
-      </section>
+            🌈
+          </span>
+          <span
+            className="pointer-events-none absolute bottom-4 left-4 text-5xl opacity-30 sm:text-6xl"
+            aria-hidden
+          >
+            ✨
+          </span>
+          <div className="relative z-10 max-w-3xl">
+            <p className="inline-flex items-center rounded-full border-2 border-pink-200/80 bg-gradient-to-r from-pink-100 to-yellow-100 px-4 py-2 text-sm font-extrabold uppercase tracking-wide text-pink-700 shadow-sm sm:text-base">
+              Hello, superstar!
+            </p>
+            <div className="mt-5">
+              <KidPageHeading id="hero-heading" as="h1">
+                Fun Kids Learning — play, read, count, and explore!
+              </KidPageHeading>
+            </div>
+            <p className="font-comic mt-5 max-w-2xl text-lg font-semibold leading-relaxed text-slate-800 sm:text-xl">
+              Tap a colourful card below to jump into games, cosy stories, sing-along rhymes, or our tiny toy
+              shop. Everything is big, bright, and ready for tablets and phones.
+            </p>
+          </div>
+        </section>
 
-      <section className="mt-10" aria-labelledby="nav-cards-heading">
-        <div className="mb-6 flex flex-col gap-2 sm:mb-8">
-          <h2 id="nav-cards-heading" className="font-display text-2xl font-bold text-slate-900 sm:text-3xl">
-            Where do you want to go?
-          </h2>
-          <p className="max-w-2xl text-sm font-semibold text-slate-700 sm:text-base">
-            Every tile is a new adventure — pick one and let the fun begin.
-          </p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {NAV_CARDS.map((card, i) => (
-            <NavCard key={card.to} {...card} delayClass={i % 2 === 0 ? '' : 'lg:translate-y-2'} />
-          ))}
-        </div>
-      </section>
-    </div>
+        <section className="mt-12" aria-labelledby="nav-cards-heading">
+          <div className="mb-8 flex flex-col gap-3">
+            <KidSectionHeading id="nav-cards-heading">Where do you want to go?</KidSectionHeading>
+            <p className="max-w-2xl text-lg font-bold leading-relaxed text-slate-800 sm:text-xl">
+              Every tile is a new adventure — pick one and let the fun begin.
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {NAV_CARDS.map((card, i) => (
+              <NavCard key={card.to} {...card} delayClass={i % 2 === 0 ? '' : 'lg:translate-y-2'} />
+            ))}
+          </div>
+        </section>
+      </div>
+    </PageBackdrop>
   );
 }

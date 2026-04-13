@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { AnimatedKidsCursor } from './AnimatedKidsCursor';
 import { Logo } from './Logo';
 
 const NAV = [
   { to: '/', label: 'Home', emoji: '🏠' },
+  { to: '/learning', label: 'Learning', emoji: '📒' },
   { to: '/memory', label: 'Memory', emoji: '🧠' },
   { to: '/math', label: 'Maths', emoji: '🔢' },
   { to: '/stories', label: 'Stories', emoji: '📚' },
@@ -29,6 +31,7 @@ export function Layout() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <AnimatedKidsCursor />
       <a
         href="#main-content"
         className="sr-only left-4 top-4 z-[100] rounded-kid bg-slate-900 px-4 py-2 font-extrabold text-white focus:not-sr-only focus:absolute focus:outline focus:outline-4 focus:outline-amber-300"
@@ -84,8 +87,8 @@ export function Layout() {
                   [
                     'flex items-center gap-2 rounded-full px-4 py-3 text-sm font-extrabold transition md:py-2',
                     isActive
-                      ? 'bg-slate-900 text-white shadow-md'
-                      : 'text-slate-800 hover:bg-sky-100/90',
+                      ? 'bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 text-slate-900 shadow-md'
+                      : 'text-slate-800 motion-safe:hover:scale-[1.03] motion-safe:hover:bg-gradient-to-r motion-safe:hover:from-pink-100 motion-safe:hover:via-orange-100 motion-safe:hover:to-yellow-100',
                   ].join(' ')
                 }
               >
@@ -97,7 +100,7 @@ export function Layout() {
         </div>
       </header>
 
-      <main id="main-content" className="mx-auto w-full max-w-6xl flex-1 px-4 sm:px-6" tabIndex={-1}>
+      <main id="main-content" className="flex-1 w-full" tabIndex={-1}>
         <Outlet />
       </main>
 
