@@ -79,53 +79,58 @@ export function AnimatedKidsCursor() {
     rafRef.current = requestAnimationFrame(moveDot);
   }, []);
 
-  useEffect(() => {
-    if (!finePointer || reducedMotion) return undefined;
+ useEffect(() => {
+  if (!finePointer || reducedMotion) return;
 
-    const onMove = (e) => {
-      targetX.current = e.clientX;
-      targetY.current = e.clientY;
+  const root = rootRef.current; // ✅ FIX: lock reference
 
-      if (!hasMovedRef.current) {
-        hasMovedRef.current = true;
-        ringX.current = e.clientX;
-        ringY.current = e.clientY;
-        rootRef.current?.classList.add('kids-cursor--visible');
-      }
+  const onMove = (e) => {
+    targetX.current = e.clientX;
+    targetY.current = e.clientY;
 
-      const overInteractive = !!e.target.closest(
-        'a, button, [role="button"], input, textarea, select, label'
-      );
-      if (overInteractive !== hoveringRef.current) {
-        hoveringRef.current = overInteractive;
-        rootRef.current?.classList.toggle('kids-cursor--hover', overInteractive);
-      }
-    };
+    if (!hasMovedRef.current) {
+      hasMovedRef.current = true;
+      ringX.current = e.clientX;
+      ringY.current = e.clientY;
 
-    const onDown = () => setClicking(true);
-    const onUp = () => setClicking(false);
+      root?.classList.add("kids-cursor--visible");
+    }
 
-    window.addEventListener('mousemove', onMove);
-    window.addEventListener('mousedown', onDown);
-    window.addEventListener('mouseup', onUp);
+    const overInteractive = !!e.target.closest(
+      "a, button, [role='button'], input, textarea, select, label"
+    );
 
-    document.body.classList.add('kids-cursor-on');
-    rafRef.current = requestAnimationFrame(moveDot);
+    if (overInteractive !== hoveringRef.current) {
+      hoveringRef.current = overInteractive;
+      root?.classList.toggle("kids-cursor--hover", overInteractive);
+    }
+  };
 
-    return () => {
-      window.removeEventListener('mousemove', onMove);
-      window.removeEventListener('mousedown', onDown);
-      window.removeEventListener('mouseup', onUp);
-      document.body.classList.remove('kids-cursor-on');
-      hasMovedRef.current = false;
-      rootRef.current?.classList.remove('kids-cursor--visible', 'kids-cursor--hover');
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, [finePointer, reducedMotion, moveDot]);
+  const onDown = () => setClicking(true);
+  const onUp = () => setClicking(false);
 
-  if (!finePointer || reducedMotion) {
-    return null;
-  }
+  window.addEventListener("mousemove", onMove);
+  window.addEventListener("mousedown", onDown);
+  window.addEventListener("mouseup", onUp);
+
+  document.body.classList.add("kids-cursor-on");
+
+  rafRef.current = requestAnimationFrame(moveDot);
+
+  return () => {
+    window.removeEventListener("mousemove", onMove);
+    window.removeEventListener("mousedown", onDown);
+    window.removeEventListener("mouseup", onUp);
+
+    document.body.classList.remove("kids-cursor-on");
+
+    hasMovedRef.current = false;
+
+    root?.classList.remove("kids-cursor--visible", "kids-cursor--hover"); // ✅ FIXED
+
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+  };
+}, [finePointer, reducedMotion, moveDot]);
 
   return (
     <div
