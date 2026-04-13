@@ -1,49 +1,15 @@
-import { useEffect, useId, useRef, useState } from 'react';
-import { useRhymeNarration } from '../../hooks/useRhymeNarration';
-import { rhymeMusicSources } from '../../utils/rhymeMusicSources';
+import { useEffect, useId, useState } from 'react';
 
-const MUSIC_VOLUME = 0.28;
-
-const btnBase =
-  'tap-target min-h-[52px] rounded-kid-lg px-5 py-3 text-base font-extrabold shadow-md transition enabled:motion-safe:hover:scale-[1.03] enabled:motion-safe:hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-45';
 
 /**
  * One nursery rhyme: verses, background music (MP3 from /public + fallback), and optional voice read-aloud.
  */
-export function RhymeCard({ rhyme, isMusicPlaying, onMusicStart, onMusicStop }) {
-  const { id: rhymeId, title, verses, musicFile } = rhyme;
+export function RhymeCard({ rhyme, isMusicPlaying, onMusicStop }) {
+  const { id: rhymeId } = rhyme;
   const [open, setOpen] = useState(false);
-  const [musicError, setMusicError] = useState(false);
-  const panelId = useId();
-  const audioRef = useRef(null);
+  const panelId = useId(); 
 
-  const { primary, fallback } = rhymeMusicSources(musicFile);
 
-  const {
-    narrationPlaying,
-    narrationError,
-    speak: speakNarration,
-    stop: stopNarration,
-    replay: replayNarration,
-  } = useRhymeNarration(title, verses);
-
-  useEffect(() => {
-    if (!open) stopNarration();
-  }, [open, stopNarration]);
-
-  useEffect(() => {
-    const el = audioRef.current;
-    if (!el || !musicFile) return;
-
-    if (open && isMusicPlaying) {
-      el.volume = MUSIC_VOLUME;
-      el.loop = true;
-      const p = el.play();
-      if (p) p.catch(() => setMusicError(true));
-    } else {
-      el.pause();
-    }
-  }, [open, isMusicPlaying, musicFile]);
 
   useEffect(() => {
     if (!open && isMusicPlaying) {
@@ -54,35 +20,7 @@ export function RhymeCard({ rhyme, isMusicPlaying, onMusicStart, onMusicStop }) 
   function toggleOpen() {
     setOpen((v) => !v);
   }
-
-  function handlePlayMusic() {
-    setMusicError(false);
-    onMusicStart(rhymeId);
-  }
-
-  function handlePauseMusic() {
-    onMusicStop(rhymeId);
-  }
-
-  function handleReplayMusic() {
-    setMusicError(false);
-    if (!isMusicPlaying) onMusicStart(rhymeId);
-    queueMicrotask(() => {
-      const el = audioRef.current;
-      if (!el) return;
-      el.currentTime = 0;
-      const p = el.play();
-      if (p) p.catch(() => setMusicError(true));
-    });
-  }
-
-  function onAudioLoaded() {
-    setMusicError(false);
-  }
-
-  function onAudioError() {
-    setMusicError(true);
-  }
+ 
 
   return (
     <article className="overflow-hidden rounded-kid-lg border-[3px] border-white bg-white/95 shadow-[0_12px_40px_rgba(15,23,42,0.12)] transition-all duration-300 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_18px_50px_rgba(79,70,229,0.18)]">
