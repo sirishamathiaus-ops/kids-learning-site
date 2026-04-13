@@ -1,6 +1,5 @@
 {
   "name": "my-app",
-  "homepage": "https://sirishamathiaus-ops.github.io/kids-learning-site",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
