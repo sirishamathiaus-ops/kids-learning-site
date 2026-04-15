@@ -1,10 +1,12 @@
 import { useCallback, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { BackHomeLink } from '../components/kids/BackHomeLink';
 import { KidPageHeading } from '../components/kids/KidPageHeading';
 import { PageBackdrop } from '../components/layout/PageBackdrop';
 import { RhymeCard } from '../components/rhymes/RhymeCard';
 import { PAGE_BACKGROUNDS } from '../data/pageBackgrounds';
 import { NURSERY_RHYMES } from '../data/rhymes';
+
 
 export function NurseryRhymesPage() {
   const [playingId, setPlayingId] = useState(null);
@@ -34,7 +36,7 @@ export function NurseryRhymesPage() {
         <meta property="og:description" content="Sing along nursery rhymes with music and fun learning for kids." />
         <meta property="og:url" content="https://kids-learning-site.vercel.app/rhymes" />
       </Helmet>
-      
+
       <div className="pb-16 pt-6 sm:pb-20 sm:pt-8">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>

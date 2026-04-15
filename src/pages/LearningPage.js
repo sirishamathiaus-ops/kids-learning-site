@@ -1,9 +1,10 @@
+import { Helmet } from 'react-helmet';
 import { BackHomeLink } from '../components/kids/BackHomeLink';
 import { KidPageHeading } from '../components/kids/KidPageHeading';
 import { PageBackdrop } from '../components/layout/PageBackdrop';
 import { NavCard } from '../components/kids/NavCard';
 import { PAGE_BACKGROUNDS } from '../data/pageBackgrounds';
-import { Helmet } from 'react-helmet';
+
 
 const LEARNING_CARDS = [
   {
