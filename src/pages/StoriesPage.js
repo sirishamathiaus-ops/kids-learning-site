@@ -5,6 +5,7 @@ import { PageBackdrop } from '../components/layout/PageBackdrop';
 import { StoryReaderModal } from '../components/stories/StoryReaderModal';
 import { PAGE_BACKGROUNDS } from '../data/pageBackgrounds';
 import { STORIES } from '../data/stories';
+import { Helmet } from 'react-helmet';
 
 export function StoriesPage() {
   const [active, setActive] = useState(null);
@@ -14,6 +15,18 @@ export function StoriesPage() {
       imageUrl={PAGE_BACKGROUNDS.stories}
       overlayClassName="bg-gradient-to-b from-violet-50/94 via-white/93 to-amber-50/90 backdrop-blur-[2px]"
     >
+         <Helmet>
+        <title>Kids Stories – Fun Short Reading Stories for Children</title>
+
+        <meta
+          name="description"
+          content="Free kids story time with short, fun, and easy reading stories. Perfect for early readers in Australia to improve reading skills."
+        />
+
+        <meta property="og:title" content="Kids Story Time" />
+        <meta property="og:description" content="Fun and short stories for kids to read and enjoy." />
+        <meta property="og:url" content="https://kids-learning-site.vercel.app/stories" />
+      </Helmet>
       <div className="pb-16 pt-6 sm:pb-20 sm:pt-8">
         <BackHomeLink />
         <div className="mt-5">

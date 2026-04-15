@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { BackHomeLink } from '../components/kids/BackHomeLink';
 import { KidPageHeading } from '../components/kids/KidPageHeading';
 import { PageBackdrop } from '../components/layout/PageBackdrop';
@@ -11,6 +12,18 @@ export function ShopPage() {
       imageUrl={PAGE_BACKGROUNDS.shop}
       overlayClassName="bg-gradient-to-b from-orange-50/93 via-white/92 to-pink-50/90 backdrop-blur-[2px]"
     >
+           <Helmet>
+        <title>Kids Learning Shop – Educational Toys & Books Australia</title>
+
+        <meta
+          name="description"
+          content="Discover fun educational toys, books, and learning tools for kids. Safe and parent-friendly picks for children in Australia."
+        />
+
+        <meta property="og:title" content="Kids Learning Shop" />
+        <meta property="og:description" content="Educational toys, books, and learning tools for kids in Australia." />
+        <meta property="og:url" content="https://kids-learning-site.vercel.app/shop" />
+      </Helmet>
       <div className="pb-16 pt-6 sm:pb-20 sm:pt-8">
         <div className="mb-8">
           <BackHomeLink />

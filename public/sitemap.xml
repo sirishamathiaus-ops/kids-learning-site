@@ -5,4 +5,28 @@
     <loc>https://kids-learning-site.vercel.app/</loc>
   </url>
 
+  <url>
+    <loc>https://kids-learning-site.vercel.app/learning</loc>
+  </url>
+
+  <url>
+    <loc>https://kids-learning-site.vercel.app/math</loc>
+  </url>
+
+  <url>
+    <loc>https://kids-learning-site.vercel.app/memory</loc>
+  </url>
+
+  <url>
+    <loc>https://kids-learning-site.vercel.app/stories</loc>
+  </url>
+
+  <url>
+    <loc>https://kids-learning-site.vercel.app/rhymes</loc>
+  </url>
+
+  <url>
+    <loc>https://kids-learning-site.vercel.app/shop</loc>
+  </url>
+
 </urlset>

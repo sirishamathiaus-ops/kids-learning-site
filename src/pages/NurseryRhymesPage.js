@@ -22,6 +22,19 @@ export function NurseryRhymesPage() {
       imageUrl={PAGE_BACKGROUNDS.rhymes}
       overlayClassName="bg-gradient-to-b from-fuchsia-50/93 via-white/92 to-indigo-50/90 backdrop-blur-[2px]"
     >
+       <Helmet>
+        <title>Nursery Rhymes for Kids – Sing Along Songs & Learning</title>
+
+        <meta
+          name="description"
+          content="Free nursery rhymes for kids with songs, lyrics, and music. Fun learning activity for children in Australia to improve memory and language skills."
+        />
+
+        <meta property="og:title" content="Nursery Rhymes for Kids" />
+        <meta property="og:description" content="Sing along nursery rhymes with music and fun learning for kids." />
+        <meta property="og:url" content="https://kids-learning-site.vercel.app/rhymes" />
+      </Helmet>
+      
       <div className="pb-16 pt-6 sm:pb-20 sm:pt-8">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>

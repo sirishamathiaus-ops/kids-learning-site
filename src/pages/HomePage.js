@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { KidPageHeading, KidSectionHeading } from '../components/kids/KidPageHeading';
 import { NavCard } from '../components/kids/NavCard';
 import { PageBackdrop } from '../components/layout/PageBackdrop';
@@ -54,6 +55,18 @@ export function HomePage() {
       imageUrl={PAGE_BACKGROUNDS.home}
       overlayClassName="bg-gradient-to-b from-amber-50/94 via-white/92 to-rose-50/90 backdrop-blur-[2px]"
     >
+            <Helmet>
+        <title>Kids Learning Site – Fun ABC, Maths, Stories & Games</title>
+
+        <meta
+          name="description"
+          content="Free kids learning website with ABC learning, maths quiz, memory games, nursery rhymes, and fun stories for children in Australia."
+        />
+
+        <meta property="og:title" content="Kids Learning Site – Fun Games for Kids" />
+        <meta property="og:description" content="Play, learn, and explore ABC, maths, stories, and rhymes for kids." />
+        <meta property="og:url" content="https://kids-learning-site.vercel.app/" />
+      </Helmet>
       <div className="pb-16 pt-6 sm:pb-20 sm:pt-8">
         <section
           className="relative overflow-hidden rounded-kid-lg border-[3px] border-white bg-white/90 p-6 shadow-[0_16px_48px_rgba(15,23,42,0.12)] sm:p-10"
